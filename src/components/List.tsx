@@ -1,6 +1,6 @@
 import ListItem from "./ListItem";
 
-const List = (props: { gpus: any }) => {
+const List = (props: { gpus: any; removeGPU: CallableFunction }) => {
   function renderItems() {
     const items = props.gpus;
 
@@ -9,7 +9,15 @@ const List = (props: { gpus: any }) => {
     }
 
     return items.map((item: any) => {
-      return <ListItem model={item.model} brand={item.brand} key={item.id} />;
+      return (
+        <ListItem
+          model={item.model}
+          brand={item.brand}
+          id={item.id}
+          removeGPU={(id: number) => props.removeGPU(id)}
+          key={item.id}
+        />
+      );
     });
   }
 

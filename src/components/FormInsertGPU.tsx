@@ -2,10 +2,7 @@ import { useState } from "react";
 import OptionGPUModel from "./OptionGPUModel";
 import { listAMD, listNVIDIA } from "../allGPUs";
 
-const FormInsertGPU = (props: {
-  handleInsertionGPUs: CallableFunction;
-  removeGPU: CallableFunction;
-}) => {
+const FormInsertGPU = (props: { handleInsertionGPUs: CallableFunction }) => {
   const [brand, setBrand] = useState<string>("default");
   const [model, setModel] = useState<string>("default");
   const [fps, setFps] = useState<number>(0);

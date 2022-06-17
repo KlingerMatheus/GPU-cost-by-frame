@@ -2,7 +2,12 @@ import { faXmark, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, memo, useEffect } from "react";
 
-const ListItem = (props: { model: string; brand: string; key: number }) => {
+const ListItem = (props: {
+  model: string;
+  brand: string;
+  id: number;
+  removeGPU: CallableFunction;
+}) => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
 
   useEffect(() => {
@@ -30,7 +35,10 @@ const ListItem = (props: { model: string; brand: string; key: number }) => {
           >
             <FontAwesomeIcon icon={isVisible ? faEye : faEyeSlash} />
           </button>
-          <button className="btn-icon btn-delete">
+          <button
+            onClick={() => props.removeGPU(props.id)}
+            className="btn-icon btn-delete"
+          >
             <FontAwesomeIcon icon={faXmark} />
           </button>
         </div>

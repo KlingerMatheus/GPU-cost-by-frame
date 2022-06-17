@@ -12,6 +12,7 @@ function App() {
     brand: string;
     fps: number;
     price: number;
+    isVisible: boolean;
   };
 
   const [gpus, setGPUs] = useState<GPU_Info[]>([]);
@@ -50,9 +51,8 @@ function App() {
           handleInsertionGPUs={(newItem: GPU_Info) =>
             handleInsertionGPUs(newItem)
           }
-          removeGPU={(id: number) => removeGPU(id)}
         />
-        <List gpus={gpus} />
+        <List gpus={gpus} removeGPU={(id: number) => removeGPU(id)} />
         <ChartColumn gpus={handleChartInsertion()} />
       </div>
     </div>

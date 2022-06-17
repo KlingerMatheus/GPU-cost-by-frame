@@ -40,6 +40,7 @@ body {
   position: relative;
   flex-direction: row;
   align-items: left;
+  justify-content: center;
   width: 100%;
   padding: 50px;
 }
@@ -55,6 +56,7 @@ body {
   height: 700px;
   min-width: 400px;
   margin-inline: 15px;
+  margin-bottom: 25px;
 }
 
 .section-title {
@@ -291,4 +293,10 @@ li {
 .no-visibility {
   opacity: 0.4;
   filter: grayscale(100%);
+}
+
+.empty-list-message {
+  color: #fff;
+  font-weight: bolder;
+  font-size: 24px;
 }

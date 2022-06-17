@@ -25,8 +25,8 @@ const ChartColumn = (props: { gpus: any }) => {
     });
   };
 
-  return (
-    <>
+  const renderChart = () => {
+    return (
       <div className="section-group section-chart">
         <Chart
           options={{
@@ -42,7 +42,21 @@ const ChartColumn = (props: { gpus: any }) => {
           height="100%"
         />
       </div>
-    </>
+    );
+  };
+
+  const renderEmptyListMessage = () => {
+    return (
+      <div className="section-group">
+        <p className="empty-list-message">
+          Add 2 or more GPUs on the list to show the Chart Comparison.
+        </p>
+      </div>
+    );
+  };
+
+  return (
+    <>{props.gpus.length < 2 ? renderEmptyListMessage() : renderChart()}</>
   );
 };
 
