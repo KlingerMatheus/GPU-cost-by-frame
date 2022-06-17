@@ -146,21 +146,17 @@ input[type="number"] {
 }
 
 .item-list {
-  background-color: rgb(60, 60, 60);
+  background-color: rgb(40, 40, 40);
   color: #fff;
+  position: relative;
   margin-bottom: 3px;
   border-left: 3px solid transparent;
   padding: 10px 20px;
   transition: ease-in 100ms;
-  cursor: pointer;
 }
 
 .item-list:hover {
   filter: brightness(1.2);
-}
-
-.item-list:active {
-  filter: brightness(1.4);
 }
 
 .item-list-brand {
@@ -242,4 +238,57 @@ li {
     margin-inline: 0;
     height: auto;
   }
+}
+
+.item-list:hover > .item-list-options {
+  opacity: 1;
+}
+
+.item-list-options {
+  position: absolute;
+  top: 50%;
+  opacity: 0;
+  right: 12px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+
+.btn-icon {
+  background-color: transparent;
+  border: none;
+  opacity: 0.4;
+  filter: grayscale(100%);
+  width: 40px;
+  height: 40px;
+  margin-inline: 4px;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: 100px;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms;
+}
+
+.btn-icon:hover {
+  transform: scale(1.15);
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.btn-icon:active {
+  filter: grayscale(100%);
+}
+
+.btn-delete {
+  background-color: red;
+}
+.btn-visibility {
+  background-color: rgb(3, 70, 70);
+}
+
+.no-visibility {
+  opacity: 0.4;
+  filter: grayscale(100%);
 }
